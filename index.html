@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlot & Isael</title>
+
+    <!-- Fuentes elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="fondo.jpg" alt="Fondo boda">
+
+        <div class="overlay">
+            <h1 class="names">Charlot & Isael</h1>
+            <p class="date">15 · Junio · 2026</p>
+            <a href="#mensaje" class="btn">Bajar</a>
+        </div>
+    </section>
+
+    <!-- MENSAJE -->
+    <section id="mensaje" class="section mensaje">
+        <h2>Con Amor</h2>
+        <p>
+            Hoy comenzamos un nuevo capítulo de nuestra historia,
+            y queremos compartir este momento tan especial con ustedes.
+            Gracias por acompañarnos en el día más importante de nuestras vidas.
+        </p>
+    </section>
+
+    <!-- CEREMONIA -->
+    <section class="section ceremonia">
+        <h2>Ceremonia</h2>
+
+        <div class="foto-lugar">
+            <!-- Aquí irá la foto -->
+            Imagen del Lugar
+        </div>
+
+        <p class="hora">5:00 PM</p>
+
+        <a href="#" class="mapa">Ver en Google Maps</a>
+    </section>
+
+    <!-- VESTIMENTA -->
+    <section class="section vestimenta">
+        <h2>Código de Vestimenta</h2>
+        <p>Formal Elegante</p>
+        <p class="detalle">
+            Colores neutros y tonos pastel serán perfectos para esta ocasión.
+        </p>
+    </section>
+    <!-- CUENTA REGRESIVA -->
+    <section class="section contador">
+        <h2>Faltan</h2>
+
+        <div class="tiempo">
+            <div>
+                <span id="dias">00</span>
+                <p>Días</p>
+            </div>
+
+            <div>
+                <span id="horas">00</span>
+                <p>Horas</p>
+            </div>
+
+            <div>
+                <span id="minutos">00</span>
+                <p>Min</p>
+            </div>
+
+            <div>
+                <span id="segundos">00</span>
+                <p>Seg</p>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Fecha del evento (AÑO, MES-1, DIA, HORA, MINUTO)
+        const fechaEvento = new Date(2026, 2, 17, 22, 6, 0).getTime();
+
+
+        const intervalo = setInterval(() => {
+
+            const ahora = new Date().getTime();
+            const diferencia = fechaEvento - ahora;
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerText = dias;
+            document.getElementById("horas").innerText = horas;
+            document.getElementById("minutos").innerText = minutos;
+            document.getElementById("segundos").innerText = segundos;
+
+            if (diferencia < 0) {
+                clearInterval(intervalo);
+                document.querySelector(".contador").innerHTML = "<h2>¡Hoy es el gran día!</h2>";
+            }
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
