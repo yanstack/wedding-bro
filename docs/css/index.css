@@ -35,11 +35,23 @@ body {
 }
 
 .names {
+
     font-family: 'Great Vibes', cursive;
-    font-size: 60px;
+    font-size: 7vw;
     color: #2e2e2e;
     margin-bottom: 10px;
+    gap: 20px;
+    display: flex;
+
+
 }
+
+@media (max-width: 500px) {
+    .names {
+        flex-direction: column;
+    }
+}
+
 
 .date {
     font-size: 20px;
