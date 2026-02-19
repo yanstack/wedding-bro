@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Playfair Display', serif;
     color: #3b3b3b;
@@ -46,20 +50,16 @@ body {
 .btn {
     display: inline-block;
     padding: 12px 35px;
-    border: 2px solid #98742e;
-    color: #98742e;
+    background-color: #ad873c;
+    color: white;
     text-decoration: none;
     font-size: 14px;
     letter-spacing: 2px;
     transition: 0.3s;
-    text-shadow: 0 3px 5px 0px rgb(0, 0, 0);
+    box-shadow: 0 1px 1px 0px rgb(0, 0, 0);
     backdrop-filter: blur(1px);
 }
 
-.btn:hover {
-    background-color: #ad873c;
-    color: white;
-}
 
 /* SECCIONES */
 .section {
