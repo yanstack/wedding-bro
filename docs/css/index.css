@@ -35,9 +35,8 @@ body {
 }
 
 .names {
-
     font-family: 'Great Vibes', cursive;
-    font-size: 7vw;
+    font-size: clamp(4rem, 2vw, 2rem);
     color: #2e2e2e;
     margin-bottom: 10px;
     gap: 20px;
