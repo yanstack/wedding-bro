@@ -1,3 +1,6 @@
+/* =========================
+   RESET GENERAL
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -10,13 +13,24 @@ html {
 
 body {
     font-family: 'Playfair Display', serif;
-    color: #3b3b3b;
+    background: #faf8f6;
+    color: #4b3f3f;
+    line-height: 1.6;
 }
 
-/* HERO */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
     position: relative;
     height: 100vh;
+    overflow: hidden;
 }
 
 .hero img {
@@ -27,133 +41,250 @@ body {
 
 .overlay {
     position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 
+    color: white;
 }
 
 .names {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(4rem, 2vw, 2rem);
-    color: #2e2e2e;
+    font-size: 4rem;
     margin-bottom: 10px;
-    gap: 20px;
-    display: flex;
-
-
 }
-
-@media (max-width: 500px) {
-    .names {
-        flex-direction: column;
-    }
-}
-
 
 .date {
-    font-size: 20px;
+    font-size: 1.2rem;
     letter-spacing: 3px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 35px;
-    background-color: #ad873c;
+    background: #d4af37;
     color: white;
+    padding: 12px 25px;
     text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 2px;
-    transition: 0.3s;
-    box-shadow: 0 1px 1px 0px rgb(0, 0, 0);
-    backdrop-filter: blur(1px);
+    border-radius: 30px;
+    transition: 0.3s ease;
+    font-weight: 600;
 }
 
+.btn:hover {
+    background: #b9962f;
+}
 
-/* SECCIONES */
+/* =========================
+   SECCIONES GENERALES
+========================= */
+
 .section {
     padding: 80px 20px;
-    text-align: center;
+    max-width: 1100px;
+    margin: auto;
 }
 
 .section h2 {
+    text-align: center;
     font-family: 'Great Vibes', cursive;
-    font-size: 40px;
-    margin-bottom: 25px;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #8b6f47;
 }
 
-/* MENSAJE */
-.mensaje p {
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.8;
-    font-size: 18px;
+.section p {
+    margin-bottom: 15px;
 }
 
-/* CEREMONIA */
-.foto-lugar {
-    width: 80%;
-    max-width: 500px;
-    height: 300px;
-    margin: 30px auto;
-    background-color: #f1f1f1;
+/* =========================
+   MENSAJE
+========================= */
+
+.mensaje {
     display: flex;
+    gap: 40px;
     align-items: center;
     justify-content: center;
-    color: #999;
-    border: 1px solid #ddd;
+    flex-wrap: wrap;
 }
 
+.mensaje div {
+    flex: 1 1 400px;
+}
+
+.mensaje img {
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+/* =========================
+   CEREMONIA MEJORADA
+========================= */
+
+.ceremonia {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.ceremonia-contenido {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    /* 👈 esto centra verticalmente */
+}
+
+
+.foto-lugar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.foto-lugar img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* Hora elegante */
 .hora {
-    font-size: 18px;
-    margin: 15px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #8b6f47;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
+/* Botón mapa elegante */
 .mapa {
+    display: inline-block;
+    background: #8b6f47;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
     text-decoration: none;
-    color: #c6a76b;
-    border-bottom: 1px solid #c6a76b;
-    padding-bottom: 3px;
+    /* 👈 elimina el azul */
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
-/* VESTIMENTA */
-.vestimenta {
-    background-color: #faf9f7;
+.mapa:hover {
+    background: #6f5636;
+    transform: translateY(-2px);
 }
 
-.detalle {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #666;
+.indicaciones {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* CONTADOR */
+
+/* =========================
+   VESTIMENTA
+========================= */
+
+.bloque-vestimenta {
+    margin-bottom: 30px;
+}
+
+.colores {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.foto-colores {
+    margin: 20px auto;
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+/* =========================
+   CONTADOR
+========================= */
+
 .contador {
-    background-color: #ffffff;
+    background: #f3ede6;
+    text-align: center;
 }
 
 .tiempo {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .tiempo div {
-    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    min-width: 90px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .tiempo span {
-    font-size: 40px;
-    font-weight: 600;
-    color: #c6a76b;
-    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #8b6f47;
 }
 
-.tiempo p {
-    margin-top: 5px;
-    font-size: 14px;
-    letter-spacing: 2px;
+/* =========================
+   REGALOS
+========================= */
+
+.regalos .cuenta {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   CONFIRMACION
+========================= */
+
+.confirmacion {
+    text-align: center;
+}
+
+.confirmacion .btn {
+    margin-top: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .names {
+        font-size: 2.8rem;
+    }
+
+    .mensaje {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tiempo {
+        gap: 20px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
 }
