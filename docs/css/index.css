@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -224,20 +229,44 @@ img {
    VESTIMENTA
 ========================= */
 
-.bloque-vestimenta {
-    margin-bottom: 30px;
+/* =========================
+   VESTIMENTA
+========================= */
+
+.vestimenta {
+    text-align: center;
 }
 
+/* Bloques Damas y Caballeros */
+.bloque-vestimenta {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenedor colores */
 .colores {
-    text-align: center;
+    margin-top: 40px;
+}
+
+/* Cada bloque de imagen + titulo */
+.colores h3 {
     margin-top: 30px;
 }
 
+/* Imágenes controladas correctamente */
 .foto-colores {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
     margin: 20px auto;
     border-radius: 20px;
-    max-width: 400px;
 }
+
 
 /* =========================
    CONTADOR
