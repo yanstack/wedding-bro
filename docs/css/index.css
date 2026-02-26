@@ -156,6 +156,34 @@ img {
     margin-bottom: 20px;
 }
 
+/* =========================
+   CEREMONIA RESPONSIVE CORRECTO
+========================= */
+
+@media (max-width: 1024px) {
+
+    .ceremonia-contenido {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .foto-lugar,
+    .indicaciones {
+        width: 100%;
+    }
+
+    .foto-lugar img {
+        max-height: none;
+        /* 👈 quitamos límite */
+        height: auto;
+    }
+
+    .indicaciones {
+        padding: 25px;
+    }
+}
+
+
 /* Hora elegante */
 .hora {
     font-size: 1.4rem;
