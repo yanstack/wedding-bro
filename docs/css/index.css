@@ -135,6 +135,8 @@ img {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    align-items: center;
+    width: 90%;
 }
 
 .ceremonia-contenido {
@@ -279,9 +281,11 @@ img {
 
 .tiempo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 40px;
-    flex-wrap: wrap;
+
 }
 
 .tiempo div {
@@ -290,6 +294,7 @@ img {
     border-radius: 20px;
     min-width: 90px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 10px 120px;
 }
 
 .tiempo span {
