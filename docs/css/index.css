@@ -353,6 +353,9 @@ img {
 /* =========================
    CONTADOR
 ========================= */
+/* =========================
+   CONTADOR NUEVO DISEÑO
+========================= */
 
 .contador {
     background: #f3ede6;
@@ -361,28 +364,44 @@ img {
 
 .tiempo {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.tiempo div {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    min-width: 90px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    padding: 10px 120px;
+/* Bloque individual */
+.bloque-tiempo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.tiempo span {
-    font-size: 2rem;
+/* Número */
+.bloque-tiempo span {
+    font-size: 1.7rem;
     font-weight: bold;
     color: #8b6f47;
-
+    letter-spacing: 1px;
 }
+
+/* Texto debajo */
+.bloque-tiempo p {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    color: #6f5c40;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Separador : */
+.separador {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #d4af37;
+    margin-top: -15px;
+}
+
 
 
 /* =========================
@@ -459,6 +478,10 @@ h2 {
    CRONOGRAMA
 ========================= */
 
+/* =========================
+   CRONOGRAMA
+========================= */
+
 .cronograma {
     text-align: center;
 }
@@ -467,17 +490,17 @@ h2 {
     position: relative;
     max-width: 700px;
     margin: auto;
-    padding: 40px 0;
+    padding: 30px 0;
 }
 
 /* Línea vertical */
 .timeline::before {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 52%;
     top: 0;
     width: 3px;
-    height: 100%;
+    height: 95.2%;
     background: #d4af37;
     transform: translateX(-50%);
 }
@@ -485,7 +508,7 @@ h2 {
 /* Cada item */
 .timeline-item {
     position: relative;
-    margin: 40px 0;
+    margin: 35px 0;
     opacity: 0;
     transform: translateY(40px);
     transition: 0.8s ease;
@@ -501,7 +524,7 @@ h2 {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 52%;
     width: 18px;
     height: 18px;
     background: white;
@@ -521,26 +544,155 @@ h2 {
 /* Caja */
 .timeline-content {
     background: white;
-    padding: 20px;
+    padding: 20px 15px;
     border-radius: 15px;
-    width: 45%;
+    width: 49%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Alternar izquierda y derecha */
+.icono-evento {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+
+.timeline-content i {
+    text-align: center;
+}
+
 .timeline-item:nth-child(odd) .timeline-content {
     margin-left: 55%;
-    text-align: left;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
     margin-right: 55%;
-    text-align: right;
 }
+
 
 /* Hora */
 .hora-evento {
     font-weight: bold;
     color: #8b6f47;
     font-size: 1.1rem;
+    white-space: nowrap;
+    /* evita que se parta */
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    font-size: 13px;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.3;
+}
+
+
+/* =========================
+   FINAL DEL TIMELINE
+========================= */
+
+.timeline-end {
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.timeline-end.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Línea horizontal final */
+.timeline-end::before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2.5px;
+    background: #d4af37;
+    margin: 0 auto 5px auto;
+}
+
+.timeline-end span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.0rem;
+    color: #8b6f47;
+}
+
+
+/*-----------------------------------------------------------------------------*/
+
+/* =========================
+   SOLO ADULTOS
+========================= */
+
+.solo-adultos {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.adultos-box {
+    background: #fff5f5;
+    border: 2px solid #c0392b;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 8px 20px rgba(192, 57, 43, 0.15);
+}
+
+.adultos-box h2 {
+    color: #c0392b;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.adultos-box p {
+    color: #7a2d26;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+
+/*--------------------------------------------------------------------------------------*/
+
+/* =========================
+   BOTÓN MÚSICA FLOTANTE
+========================= */
+
+.boton-musica {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    background: #d4af37;
+    color: white;
+    font-size: 22px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.boton-musica:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.boton-musica.pausado {
+    background: #8b6f47;
 }

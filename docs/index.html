@@ -47,14 +47,15 @@
     <section class="section ceremonia">
         <h2>Cronograma</h2>
 
-        <section class="section cronograma reveal">
+        <section class="section cronograma reveal" style="margin-top: -70px;">
 
-            <h3>🕊️ Así se vivirá nuestro día</h3>
+            <h3 style="margin-bottom: 15px;">🕊️ Así se vivirá nuestro día</h3>
 
             <div class="timeline">
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <i><img class="icono-evento" src="arco-de-boda.png" alt=""></i>
                         <span class="hora-evento">10:30 a.m.</span>
                         <p>Ceremonia religiosa</p>
                     </div>
@@ -62,6 +63,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <i><img class="icono-evento" src="boda.png" alt=""></i>
                         <span class="hora-evento">11:30 a.m.</span>
                         <p>Fotos con los novios</p>
                     </div>
@@ -69,6 +71,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <i><img class="icono-evento" src="almuerzo.png" alt=""></i>
                         <span class="hora-evento">12:30 p.m.</span>
                         <p>Almuerzo</p>
                     </div>
@@ -76,6 +79,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <i><img class="icono-evento" src="bola-de-disco.png" alt=""></i>
                         <span class="hora-evento">1:45 p.m.</span>
                         <p>Juegos y dinámicas</p>
                     </div>
@@ -83,14 +87,21 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <i><img class="icono-evento" src="coche.png" alt=""></i>
                         <span class="hora-evento">2:30 p.m.</span>
                         <p>Despedida y entrega de pastel</p>
                     </div>
                 </div>
 
+                <!-- Final elegante -->
+                <div class="timeline-end">
+                    <span>Fin de la celebración 🤍</span>
+                </div>
+
             </div>
 
         </section>
+
 
 
         <div class="ceremonia-contenido">
@@ -190,27 +201,38 @@
         <h2>Faltan</h2>
 
         <div class="tiempo">
-            <div>
+
+            <div class="bloque-tiempo">
                 <span id="dias">00</span>
                 <p>Días</p>
             </div>
 
-            <div>
+            <div class="separador">:</div>
+
+            <div class="bloque-tiempo">
                 <span id="horas">00</span>
                 <p>Horas</p>
             </div>
 
-            <div>
+            <div class="separador">:</div>
+
+            <div class="bloque-tiempo">
                 <span id="minutos">00</span>
                 <p>Min</p>
             </div>
 
-            <div>
+            <div class="separador">:</div>
+
+            <div class="bloque-tiempo">
                 <span id="segundos">00</span>
                 <p>Seg</p>
             </div>
+
         </div>
     </section>
+
+
+
     <section class="section regalos">
         <h2>Regalos</h2>
 
@@ -231,6 +253,24 @@
             <p><strong>Cédula:</strong> 402-3379878-0</p>
         </div>
     </section>
+
+    <section class="section solo-adultos reveal">
+        <div class="adultos-box">
+            <h2>🤍 Evento solo para adultos</h2>
+
+            <p>
+                Con mucho cariño les informamos que nuestra celebración
+                será únicamente para adultos.
+            </p>
+
+            <p>
+                Agradecemos de corazón su comprensión y apoyo
+                para que todos podamos disfrutar plenamente
+                este día tan especial.
+            </p>
+        </div>
+    </section>
+
     <section class="section confirmacion">
         <h2>Confirmación</h2>
 
@@ -240,9 +280,18 @@
         </p>
 
         <a href="https://chat.whatsapp.com/CMWl8ZnUF2bH1cBtQlcK70" target="_blank" class="btn btn-confirm">
-            Confirmar asistencia
+            Click Aqui
         </a>
     </section>
+    <!-- Audio -->
+    <audio id="musicaFondo" loop>
+        <source src="musica.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Botón flotante -->
+    <button id="botonMusica" class="boton-musica">
+        🔊
+    </button>
 
     <script>
         // Fecha del evento (AÑO, MES-1, DIA, HORA, MINUTO)
@@ -275,6 +324,7 @@
         //----------------------------------------------------------------------------------------------
 
         const timelineItems = document.querySelectorAll('.timeline-item');
+        const timelineEnd = document.querySelector('.timeline-end');
 
         window.addEventListener('scroll', () => {
             timelineItems.forEach(item => {
@@ -286,7 +336,37 @@
                     item.classList.add('active');
                 }
             });
+
+            const endTop = timelineEnd.getBoundingClientRect().top;
+            if (endTop < window.innerHeight - 100) {
+                timelineEnd.classList.add('active');
+            }
         });
+
+        //-----------------------------------------------------------------------------------
+
+        const audio = document.getElementById("musicaFondo");
+        const boton = document.getElementById("botonMusica");
+
+        // Autoplay al cargar
+        window.addEventListener("DOMContentLoaded", () => {
+            audio.play();
+        })
+        // Toggle real
+        boton.addEventListener("click", () => {
+
+            if (audio.paused) {
+                audio.play();
+                boton.textContent = "🔊";
+                boton.classList.remove("pausado");
+            } else {
+                audio.pause();
+                boton.textContent = "▶";
+                boton.classList.add("pausado");
+            }
+
+        });
+
     </script>
 </body>
 
