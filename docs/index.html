@@ -45,11 +45,58 @@
     <!-- CEREMONIA -->
 
     <section class="section ceremonia">
-        <h2>Ceremonia</h2>
+        <h2>Cronograma</h2>
+
+        <section class="section cronograma reveal">
+
+            <h3>🕊️ Así se vivirá nuestro día</h3>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="hora-evento">10:30 a.m.</span>
+                        <p>Ceremonia religiosa</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="hora-evento">11:30 a.m.</span>
+                        <p>Fotos con los novios</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="hora-evento">12:30 p.m.</span>
+                        <p>Almuerzo</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="hora-evento">1:45 p.m.</span>
+                        <p>Juegos y dinámicas</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="hora-evento">2:30 p.m.</span>
+                        <p>Despedida y entrega de pastel</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
 
         <div class="ceremonia-contenido">
 
             <div class="foto-lugar">
+                <h2>Lugar</h2>
                 <img src="fourth.jpeg" alt="">
                 <p class="hora">Hora de ceremonia, 10:30 AM</p>
 
@@ -223,6 +270,23 @@
             }
 
         }, 1000);
+
+
+        //----------------------------------------------------------------------------------------------
+
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        window.addEventListener('scroll', () => {
+            timelineItems.forEach(item => {
+                const windowHeight = window.innerHeight;
+                const elementTop = item.getBoundingClientRect().top;
+                const visiblePoint = 100;
+
+                if (elementTop < windowHeight - visiblePoint) {
+                    item.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 

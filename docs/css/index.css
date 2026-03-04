@@ -166,8 +166,9 @@ img {
    SECCIONES GENERALES
 ========================= */
 
+
 .section {
-    padding: 80px 20px;
+    padding: 50px 20px;
     max-width: 1100px;
     margin: auto;
 }
@@ -176,7 +177,7 @@ img {
     text-align: center;
     font-family: 'Great Vibes', cursive;
     font-size: 2.8rem;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 
 }
 
@@ -213,7 +214,7 @@ img {
 .ceremonia {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
     width: 90%;
 }
@@ -445,4 +446,101 @@ h2 {
 
     color: #675450;
 
+}
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+
+/* =========================
+   CRONOGRAMA
+========================= */
+
+.cronograma {
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* Línea vertical */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #d4af37;
+    transform: translateX(-50%);
+}
+
+/* Cada item */
+.timeline-item {
+    position: relative;
+    margin: 40px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+/* Activado al hacer scroll */
+.timeline-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Punto */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 3px solid #d4af37;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    transition: 0.3s ease;
+}
+
+/* Punto activo */
+.timeline-item.active::before {
+    background: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+/* Caja */
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 45%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Alternar izquierda y derecha */
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 55%;
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 55%;
+    text-align: right;
+}
+
+/* Hora */
+.hora-evento {
+    font-weight: bold;
+    color: #8b6f47;
+    font-size: 1.1rem;
 }
