@@ -290,7 +290,7 @@
 
     <!-- Botón flotante -->
     <button id="botonMusica" class="boton-musica">
-        🔊
+        ▶
     </button>
 
     <script>
@@ -347,11 +347,6 @@
 
         const audio = document.getElementById("musicaFondo");
         const boton = document.getElementById("botonMusica");
-
-        // Autoplay al cargar
-        window.addEventListener("DOMContentLoaded", () => {
-            audio.play();
-        })
         // Toggle real
         boton.addEventListener("click", () => {
 
