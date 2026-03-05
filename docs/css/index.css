@@ -20,7 +20,13 @@ body {
     font-family: 'Playfair Display', serif;
     background: #faf8f6;
     line-height: 1.6;
+    position: relative;
+
+
 }
+
+
+/*------------------------------------------------------------------*/
 
 img {
     max-width: 100%;
